@@ -2,7 +2,7 @@
   v-app
     v-navigation-drawer(:mini-variant="mini"  v-model="drawer"  dark  overflow absolute)
       v-list(class="pa-0")
-        v-list-tile(@click.native.stop="mini = !mini" v-if="mini")
+        v-list-tile(@click.stop="mini = !mini" v-if="mini")
           v-list-tile-action
             v-icon(light) chevron_right
         v-list-tile(avatar tag="div")
@@ -11,16 +11,16 @@
           v-list-tile-content
             v-list-tile-title John Leider
           v-list-tile-action
-            v-btn(icon @click.native.stop="mini = !mini")
+            v-btn(icon @click.stop="mini = !mini")
               v-icon chevron_left
       v-list(class="pt-0" dense)
         v-divider(light)
-        v-list-tile(:key="item.title" v-for="item in items" router :to="item.link")
+        v-list-tile(:key="item.title" :to="item.link"  v-for="item in items")
           v-list-tile-action
             v-icon {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
-    v-toolbar(fixed dark)
+    v-toolbar(dark)
       v-toolbar-title
         router-link(to="/" tag="span" style="cursor: pointer") My Meetups
       v-toolbar-side-icon(@click.native.stop="drawer = !drawer")
