@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    p The Home Page
+    p The Create Meetup Page
 
 </template>
 
