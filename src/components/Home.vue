@@ -11,9 +11,11 @@
           v-carousel-item(v-for="(item, i) in meetups" v-bind:src="item.imageUrl" key="item.id" @click="onLoadMeetup(item.id)" style="cursor:pointer")
             div(class="title") {{item.title}}
 
+    v-btn(large class="success" @click="onFacebook()") Facebook
 </template>
 
 <script>
+  import Vue from 'vue'
   export default {
     computed: {
       meetups () {
@@ -23,6 +25,17 @@
     methods: {
       onLoadMeetup (id) {
         this.$router.push('/meetups/' + id)
+      },
+      onFacebook () {
+        Vue.axios.get('http://localhost:8000/login', {
+          headers: {
+            'content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Request-Method': '*'
+          }
+        }).then((response) => {
+          window.location.href = response
+        })
       }
     }
   }

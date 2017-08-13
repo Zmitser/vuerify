@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bell": "^8.7.0",
+    "cors": "^2.8.4",
+    "hapi": "^16.5.2",
+    "hapi-auth-cookie": "^7.0.0",
+    "hapi-cors": "^1.0.1",
+    "hapi-cors-headers": "^1.0.0",
+    "happi": "^0.9.1"
+  }
+}
