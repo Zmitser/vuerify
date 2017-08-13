@@ -1,6 +1,6 @@
 <template lang="pug">
   v-app
-    v-navigation-drawer(:mini-variant="mini"  v-model="drawer"  dark  overflow absolute)
+    v-navigation-drawer(:mini-variant="mini"  v-model="drawer"  dark fill-height)
       v-list(class="pa-0")
         v-list-tile(@click.stop="mini = !mini" v-if="mini")
           v-list-tile-action
@@ -20,7 +20,7 @@
             v-icon {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
-    v-toolbar(dark)
+    v-toolbar(dark fixed)
       v-toolbar-title
         router-link(to="/" tag="span" style="cursor: pointer") My Meetups
       v-toolbar-side-icon(@click.native.stop="drawer = !drawer")

@@ -7,7 +7,7 @@
             h6(class="black--text") {{meetup.title}}
           v-card-media(:src="meetup.imageUrl" height="300px")
           v-card-text
-            div(class="info--text")  {{meetup.date}} - Where it takes place
+            div(class="info--text")  {{meetup.date | date}} - {{meetup.location}}
             div Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             |Adipisci assumenda at deserunt dolorum eius esse eum, expedita hic illo ipsum magni, nobis,
             |odio odit quaerat quibusdam quis rem veritatis voluptas!
